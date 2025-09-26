@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lic. Guadalupe Palencia | Abogada y Notaria</title>
+    <meta name="description" content="Soluciones legales y notariales claras y eficientes. Asesoría en sociedades mercantiles, propiedad intelectual y trámites notariales.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2c3e50; /* Azul Marino Oscuro */
+            --secondary-color: #34495e; /* Gris Azulado */
+            --accent-color: #bdc3c7; /* Plata Claro */
+            --text-color: #333;
+            --background-color: #ffffff;
+            --font-family: 'Montserrat', sans-serif;
+        }
+
+        /* --- Reseteo y Estilos Base --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 2.2rem; text-align: center; margin-bottom: 2.5rem; }
+        h3 { font-size: 1.4rem; }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* --- Header y Navegación --- */
+        .header {
+            background-color: var(--background-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* --- Hero Section --- */
+        .hero {
+            background-color: #f4f7f6;
+            padding-top: 10rem; /* Espacio para el header fijo */
+            padding-bottom: 5rem;
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text .subtitle {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            max-width: 500px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- Servicios Section --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: #f9f9f9;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-card .icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* --- Propuesta de Valor (About) --- */
+        #about {
+            background-color: #f4f7f6;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* --- Contacto Section --- */
+        .contact-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact-content p {
+            font-size: 1.2rem;
+        }
+        
+        .contact-info {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+        
+        /* --- Responsividad --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                margin-top: 1rem;
+                padding-left: 0;
+            }
+            .nav-links li {
+                margin-left: 0;
+                margin-right: 1.5rem;
+            }
+            
+            .hero {
+                padding-top: 12rem; /* Más espacio para el nav en móvil */
+                text-align: center;
+            }
+
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text {
+                margin-bottom: 2rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header" id="header">
+        <nav class="navbar container">
+            <a href="#home" class="logo">Lic. Guadalupe Palencia</a>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#about">Mi Compromiso</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content container">
+                <div class="hero-text">
+                    <p class="subtitle">Abogada y Notaria</p>
+                    <h1>¿Trámites legales complejos y burocracia interminable?</h1>
+                    <p>
+                        Su tranquilidad es mi prioridad. Ofrezco soluciones legales claras, eficientes y a la medida para proteger su patrimonio, su empresa y sus intereses.
+                    </p>
+                    <br>
+                    <a href="#contact" class="btn">Agendar una Consulta</a>
+                </div>
+                <div class="hero-image">
+                    <img src="hero-image.jpg" alt="Licenciada Guadalupe Palencia en su oficina">
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="container">
+                <h2>Servicios Legales y Notariales</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon">📈</div>
+                        <h3>Registro de Sociedades Mercantiles</h3>
+                        <p>Inicie su negocio con el pie derecho. Me encargo de todo el proceso de constitución de su empresa (S.A., Ltda., etc.), permitiéndole enfocarse en lo que realmente importa: hacer crecer su proyecto.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">©️</div>
+                        <h3>Asesoría en Propiedad Intelectual</h3>
+                        <p>Sus ideas y su marca son sus activos más valiosos. Le ayudo a protegerlos mediante el registro de marcas, nombres comerciales y derechos de autor, garantizando su exclusividad en el mercado.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="icon">✍️</div>
+                        <h3>Actos y Contratos Notariales</h3>
+                        <p>Brindo certeza y seguridad jurídica a sus decisiones más importantes: compraventa de inmuebles, mandatos, testamentos y celebración de matrimonios. Formalidad y confianza en cada acto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container about-content">
+                <h2>Mi Compromiso: Claridad y Eficiencia</h2>
+                <p>
+                    Entiendo que el lenguaje legal puede ser intimidante y los procesos, abrumadores. Mi misión es ser su aliada estratégica, traduciendo la complejidad legal en soluciones prácticas y efectivas. Con una atención personalizada y un enfoque proactivo, mi objetivo es brindarle no solo un servicio, sino paz mental.
+                </p>
+                <br>
+                <a href="#contact" class="btn">Hablemos de su caso</a>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container contact-content">
+                <h2>Iniciemos la conversación</h2>
+                <p>
+                    El primer paso para resolver su situación legal es una consulta. Contácteme para evaluar su caso y trazar un plan de acción.
+                </p>
+                <div class="contact-info">
+                    <p>📧 Email: <a href="mailto:gpalencia.legal@email.com">gpalencia.legal@email.com</a></p>
+                    <p>📞 Teléfono: <a href="tel:+50212345678">+502 1234 5678</a></p>
+                    <p>📍 Dirección: Av. Reforma 1-23, Zona 10, Ciudad de Guatemala</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Lic. Guadalupe Palencia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- Actualizar el año del footer automáticamente ---
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- Smooth Scroll para los enlaces de navegación (opcional pero recomendado) ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
